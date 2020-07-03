@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1><a href = "{{ url_for('home') }}">Camera Management System</a></h1> <br>
+
+        <h3><a href = "{{ url_for('home') }}">1)Home</a></h3>
+
+        <h3><a href = "{{ url_for('new') }}">2)Add cameras</a></h3>
+
+        <h3><a href = "{{ url_for('all') }}">3)camera details</a></h3>
+
+        <h3><a href = "{{ url_for('modify') }}">4)modify camera details</a></h3>
+
+        <h3><a href = "{{ url_for('all') }}">5)delete camera details</a></h3>
+
+        <hr><br>
+
+        <h2>please enter the datails of every field of the camera.</h2><br>
+
+
+        {%- for category, message in get_flashed_messages(with_categories = true) %}
+             <div class = "alert alert-danger">
+                {{ message }}
+             </div>
+        {%- endfor %}
+
+        <form action = "{{ request.path }}" method = "post">
+             <label for = "camera_name">camera_name :</label><br>
+             <input type = "text" name = "camera_name" placeholder = "camera_name" /><br><br>
+
+             <label for = "camera_ip">ip :</label><br>
+             <input type = "text" name = "camera_ip" placeholder = "camera_ip" /><br><br>
+
+             <label for = "camera_port">camera_port :</label><br>
+             <input type = "text" name = "camera_port" placeholder = "camera_port" /><br><br>
+
+             <label for = "camera_username">camera_username :</label><br>
+             <input type = "text" name = "camera_username" placeholder = "camera_username" /><br><br>
+
+             <label for = "camera_password">camera_password :</label><br>
+             <input type = "camera_password" name = "camera_password" placeholder = "camera_password" /><br><br>
+
+             <input type = "submit" value = "Submit" />
+        </form>
+    </body>
+</html>

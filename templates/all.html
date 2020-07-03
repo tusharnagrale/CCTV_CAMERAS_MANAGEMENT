@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+
+   </head>
+
+   <body>
+   <h1>
+         <a href = "{{ url_for('home') }}">Camera Management System</a>
+      </h1><br>
+
+      <h3><a href = "{{ url_for('home') }}">1)Home</a></h3>
+
+      <h3><a href = "{{ url_for('new') }}">2)Add cameras</a></h3>
+
+      <h3><a href = "{{ url_for('all') }}">3)camera details</a></h3>
+
+      <h3><a href = "{{ url_for('modify') }}">4)modify camera details</a></h3>
+
+      <h3><a href = "{{ url_for('remove') }}">5)delete camera details</a></h3>
+
+       <hr/>
+      <h3>camera details<h3>
+      <table CELLPADDING="2.5" border="3">
+         <thead>
+            <tr>
+               <th>camera_id</th><br>
+               <th>camera_name</th><br>
+               <th>camera_ip</th>
+               <th>camera_port</th>
+               <th>camera_name</th>
+               <th>camera_password</th>
+            </tr>
+         </thead>
+
+         <tbody align="centre">
+            {% for camera in cameras %}
+               <tr>
+                  <td>{{ camera.camera_id }}</td>
+                  <td>{{ camera.camera_name }}</td>
+                  <td>{{ camera.camera_ip }}</td>
+                  <td>{{ camera.camera_port }}</td>
+                  <td>{{ camera.camera_username }}</td>
+                  <td>{{ camera.camera_password }}</td>
+
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Camera Management System</title>
+
+</head>
+
+<body>
+    <h1><a href = "{{ url_for('home') }}">Camera Management System</a></h1><br>
+
+    <h3><a href = "{{ url_for('new') }}">1)Add cameras</a></h3>
+
+    <h3><a href = "{{ url_for('all') }}">2)camera details</a></h3>
+
+    <hr>
+    <font color="Red"><h3>please enter camera_id for which you want to update details</h3></font>
+
+
+    <form action = "{{ request.path }}" method = "post">
+        <label for = "camera_id">camera_id :</label><br>
+        <input type = "text" name = "camera_id" placeholder = "camera_id" /><br><br>
+
+        <label for = "camera_name">camera_name :</label><br>
+         <input type = "text" name = "camera_name" placeholder = "camera_name" /><br><br>
+
+         <label for = "camera_ip">ip :</label><br>
+         <input type = "text" name = "camera_ip" placeholder = "camera_ip" /><br><br>
+
+         <label for = "camera_port">camera_port :</label><br>
+         <input type = "text" name = "camera_port" placeholder = "camera_port" /><br><br>
+
+         <label for = "camera_username">camera_username :</label><br>
+         <input type = "text" name = "camera_username" placeholder = "camera_username" /><br><br>
+
+         <label for = "camera_password">camera_password :</label><br>
+         <input type = "camera_password" name = "camera_password" placeholder = "camera_password" /><br><br>
+
+        <input type = "submit" value = "Modify" />
+    </form>
+
+</body>
+</html>

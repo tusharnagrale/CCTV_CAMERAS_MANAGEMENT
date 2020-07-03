@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Camera Management System</title>
+</head>
+<body>
+    <h1><a href = "{{ url_for('home') }}">Camera Management System</a></h1><br>
+
+    <h3><a href = "{{ url_for('home') }}">1)home</a></h3>
+
+    <h3><a href = "{{ url_for('new') }}">2)Add cameras</a></h3>
+
+    <h3><a href = "{{ url_for('all') }}">3)camera details</a></h3>
+
+    <h3><a href = "{{ url_for('modify') }}">4)modify camera details</a></h3>
+
+    <hr>
+    please enter the camera_id you want to delete
+
+    <form action = "{{ request.path }}" method = "post">
+        <label for = "camera_id">camera_id</label><br>
+        <input type = "text" name = "camera_id" placeholder = "camera_id" /><br><br>
+
+        <input type = "submit" value = "Delete" />
+    </form>
+</body>
+</html>
